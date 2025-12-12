@@ -1,35 +1,25 @@
+package Day6;
+    // https://leetcode.com/problems/find-smallest-letter-greater-than-target/
 public class leetcode1 {
     
     public static void main(String[] args){
-        int[] nums = {12,345,2,6,7896};
-        // findNumbers(nums);
-        System.out.println(findNumbers(nums));
+        char[] letters = {'x','x','y','y'};
+        System.out.println(nextGreatestLetter(letters, 'c'));
     }
-
-    static int findNumbers(int[] nums) {
-        if(nums.length == 0){
-            return -1;
-        }
-     int count=0;
-        for(int i = 0; i < nums.length;i++){
-            if(countDig(nums[i])%2 ==0){
-                count++;
+    //ceiling  = smallest element in array  >= target;
+   public static  char nextGreatestLetter(char[] letters, char target) {
+        int start = 0;
+        int end = letters.length-1;
+        if(target >= letters[end]){ return letters[0]; }
+        while(start<=end){
+            int mid = start + (end-start)/2;
+            
+            if(letters[mid]>target){
+                end = mid - 1;
+            }else{
+                start = mid + 1;
             }
         }
-       return count;
+        return letters[start];
     }
-     static int countDig(int num){
-        // int count=0;
-        // while(num > 0){
-        //    num = num / 10;
-        //    count++;
-        // }
-        // return count;
-
-        return (int)(Math.log10(num)+1); // this approach is far more faster 99.33%
-    }
-
-
-
-
 }
