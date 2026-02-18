@@ -1,3 +1,4 @@
+package Array;
 public class secondLargest {
     static int LargestSecond(int[] nums) {
         int largest = nums[0];
