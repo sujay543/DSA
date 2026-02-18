@@ -1,30 +1,22 @@
 public class secondLargest {
     static int LargestSecond(int[] nums) {
-        int max = findMax(nums);
+        int largest = nums[0];
         int secondLargest = Integer.MIN_VALUE;
-        for(int i = 0;i < nums.length;i++)
+        for(int element : nums)
         {
-            if(secondLargest < nums[i] && nums[i] != max)
+            if(element > largest)
             {
-                secondLargest = nums[i];
+                secondLargest = largest;
+                largest = element;
+            }
+
+            if(element > secondLargest && element != largest)
+            {
+                secondLargest = element;
             }
         }
         return secondLargest;
     }
-
-    static int findMax(int[] nums)
-    {
-        int max = Integer.MIN_VALUE;
-       for(int i = 0;i < nums.length;i++)
-       {
-        if(nums[i] > max)
-        {
-            max = nums[i];
-        }
-       }
-       return max;
-    }
-
     public static void main(String[] args) {
         int[] nums = {3,2,1,5,6,4};
         System.out.println(LargestSecond(nums));
