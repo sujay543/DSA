@@ -30,7 +30,7 @@ public class findSubString {
        
 
             }
-            int windowSize = end - start + 1;
+            int windowSize = end - start;
             maxSize = Math.max(maxSize, windowSize);
          }
          return maxSize;
