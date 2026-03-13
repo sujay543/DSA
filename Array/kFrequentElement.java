@@ -4,15 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import String.findSubString;
-
 public class kFrequentElement {
     public static void main(String args[])
     {
         int[] arr = {1,1,1,2,2,3};
         findMostFrequent(arr,2);
     }
-
+    
     static void findMostFrequent(int[] arr,int k)
     {
         HashMap<Integer,Integer> map = new HashMap<>();
