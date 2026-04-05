@@ -15,7 +15,7 @@ public class binarySearch {
                 end = mid - 1;
             }
         }
-
+        // Integer.MIN_VALUE
         return -1;
     }
 
