@@ -3,14 +3,16 @@ package Recursion;
 public class print {
     public static void main(String args[]) {
         int i = 5;
-        printuptoN(i);
+        printUptoN(i);
     }
 
-    static void printuptoN(int i) {
-        if (i > 0) {
-            printuptoN(i - 1);
-            System.out.println(i);
+    static void printUptoN(int num) {
+        if (num < 0) {
+            return;
         }
 
+        printUptoN(num - 1);
+        System.out.println(num);
     }
+
 }
