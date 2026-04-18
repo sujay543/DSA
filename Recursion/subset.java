@@ -21,10 +21,10 @@ public class subset {
             result.add(new ArrayList<>(current));
             return;
         }
-        current.add(arr[i]);
+        int elemnt = arr[i];
+        current.add(elemnt);
         helper(arr, current, result, i + 1);
         current.remove(current.size() - 1);
         helper(arr, current, result, i + 1);
-
     }
 }
